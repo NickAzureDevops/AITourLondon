@@ -6,60 +6,81 @@ BASE_DIR = Path(__file__).parent.parent
 from azure.ai.projects import AIProjectClient
 from azure.ai.projects.models import FileSearchTool, Tool, PromptAgentDefinition, MemoryStoreDefaultDefinition, MemoryStoreDefaultOptions, MemorySearchTool, ResponsesUserMessageItemParam, MemorySearchOptions
 import uuid
+from azure.ai.projects.models import MCPTool
+import glob
 
 load_dotenv()
 
-PROJECT_ENDPOINT = os.environ.get("AZURE_AI_PROJECT_ENDPOINT", os.environ.get("FOUNDRY_PROJECT_ENDPOINT"))
-CHAT_MODEL = os.environ.get("MEMORY_STORE_CHAT_MODEL_DEPLOYMENT_NAME", os.environ.get("FOUNDRY_MODEL"))
-EMBEDDING_MODEL = os.environ.get("MEMORY_STORE_EMBEDDING_MODEL_DEPLOYMENT_NAME", os.environ.get("FOUNDRY_EMBEDDING_MODEL", CHAT_MODEL))
+# Load environment variables with correct names
+search_service_endpoint = os.environ.get("search_service_endpoint")
+knowledge_base_name = os.environ.get("KNOWLEDGE_BASE_NAME")
+mcp_endpoint = f"{search_service_endpoint}/knowledgebases/{knowledge_base_name}/mcp?api-version=2025-11-01-preview"
+PROJECT_ENDPOINT = os.environ.get("FOUNDRY_PROJECT_ENDPOINT")
+agent_model = os.environ.get("FOUNDRY_MODEL")
+EMBEDDING_MODEL = os.environ.get("FOUNDRY_EMBEDDING_MODEL")
+project_connection_name = os.environ.get("project_connection_name")
 
-openai_client = AIProjectClient(
+project_client = AIProjectClient(
     endpoint=PROJECT_ENDPOINT,
-    model=CHAT_MODEL,
     credential=DefaultAzureCredential(),
-).get_openai_client()
+)
 
-def create_vector_store_and_upload(name, file_path):
-    vector_store = openai_client.vector_stores.create(name=name)
-    print(f"Vector store created (id: {vector_store.id}) for {name}")
-    file = openai_client.vector_stores.files.upload_and_poll(
-        vector_store_id=vector_store.id, file=open(file_path, "rb")
-    )
-    print(f"File uploaded to vector store (id: {file.id}) for {name}")
-    return vector_store
+openai_client = project_client.get_openai_client()
 
-# Schedule Agent vector store and toolset
-session_vector_store = create_vector_store_and_upload("AITour-schedule", BASE_DIR / "data/schedule-london.md")
-session_toolset = [FileSearchTool(vector_store_ids=[session_vector_store.id])]
+vector_store_id = ""
 
+if vector_store_id:
+    vector_store = openai_client.vector_stores.retrieve(vector_store_id)
+    print(f"Using existing vector store (id: {vector_store.id})")
+else:
+    vector_store = openai_client.vector_stores.create(name="AITour-schedule")
+    print(f"Vector store created (id: {vector_store.id})")
+
+    # Upload file(s) to vector store
+    files_uploaded = False
+    for file_path in glob.glob(str(BASE_DIR / "data/schedule-london.md")):
+        with open(file_path, "rb") as f:
+            file = openai_client.vector_stores.files.upload_and_poll(
+                vector_store_id=vector_store.id, file=f
+            )
+        print(f"File uploaded to vector store (id: {file.id})")
+        files_uploaded = True
+    if not files_uploaded:
+        print("Warning: No schedule-london.md file found to upload to the vector store.")
+
+session_vector_store_id = vector_store.id
+session_toolset = [FileSearchTool(vector_store_ids=[session_vector_store_id])]
 session_agent = AIProjectClient(
     endpoint=PROJECT_ENDPOINT,
     credential=DefaultAzureCredential(),
 ).agents.create_version(
     agent_name="session-agent",
     definition=PromptAgentDefinition(
-        model=os.environ["FOUNDRY_MODEL"],
-        instructions=open(BASE_DIR / "src/instructions.txt").read(),
+          model=agent_model,
+        instructions=open(BASE_DIR / "src/instructions/session.txt").read(),
         tools=session_toolset,
     ),
 )
 print(f"Session Agent created (id: {session_agent.id}, name: {session_agent.name}, version: {session_agent.version})")
 
-# FAQ Agent
-faq_vector_store = create_vector_store_and_upload("AITour-faq", BASE_DIR / "data/faq.md")
-faq_toolset = [FileSearchTool(vector_store_ids=[faq_vector_store.id])]
+# Create MCP tool with knowledge base
+mcp_kb_tool = MCPTool(
+    server_label = "knowledge-base",
+    server_url = mcp_endpoint,
+    require_approval = "never",
+    allowed_tools = ["knowledge_base_retrieve"],
+)
 
-faq_agent = AIProjectClient(
-    endpoint=PROJECT_ENDPOINT,
-    credential=DefaultAzureCredential(),
-).agents.create_version(
+# Create agent with MCP tool
+faq_agent = project_client.agents.create_version(
     agent_name="faq-agent",
     definition=PromptAgentDefinition(
-        model=os.environ["FOUNDRY_MODEL"],
-        instructions="Use the get_faq tool to answer attendee questions about logistics, venue, registration, food, WiFi, workshops, networking, and other frequently asked questions. Always call the get_faq tool for any question that matches or relates to the FAQ data. If the user asks a question that is not covered by the FAQ, respond politely and suggest where they might find more information or direct them to event staff",
-        tools=faq_toolset,
-    ),
+        model=agent_model,
+        instructions=open(BASE_DIR / "src/instructions/faq.txt").read(),
+        tools=[mcp_kb_tool], 
+    )
 )
+
 print(f"FAQ Agent created (id: {faq_agent.id}, name: {faq_agent.name}, version: {faq_agent.version})")
 
 # Personalised Agent (uses both schedule and FAQ, with persistent memory)
@@ -71,21 +92,21 @@ personalised_memory_tool = MemorySearchTool(
     update_delay=1,
 )
 personalised_toolset = [
-    FileSearchTool(vector_store_ids=[session_vector_store.id]),
-    FileSearchTool(vector_store_ids=[faq_vector_store.id]),
+    FileSearchTool(vector_store_ids=[session_vector_store_id]),
+    FileSearchTool(vector_store_ids=["faq_vector_store_id"]), 
     personalised_memory_tool,
 ]
-personalised_agent = AIProjectClient(
-    endpoint=PROJECT_ENDPOINT,
-    credential=DefaultAzureCredential(),
-).agents.create_version(
+
+# Personalized Agent (uses both schedule and FAQ, with persistent memory)
+personalised_agent = project_client.agents.create_version(
     agent_name="personalised-agent",
     definition=PromptAgentDefinition(
-        model=os.environ["FOUNDRY_MODEL"],
-        instructions="You are a personalised concierge agent for the Microsoft AI Tour. Use schedule and FAQ tools to answer questions, and use persistent memory to remember user preferences and context across sessions.",
+        model=agent_model,
+        instructions=open(BASE_DIR / "src/instructions/personalised.txt").read(),
         tools=personalised_toolset,
-    ),
+    )
 )
+
 print(f"Personalised Agent created (id: {personalised_agent.id}, name: {personalised_agent.name}, version: {personalised_agent.version})")
 
 # Unified chat loop for agent selection and memory operations
@@ -163,32 +184,36 @@ def chat_with_agent():
                 print("Personalized agent logic would go here.")
         
         elif agent_choice == "session":
-            print("Ready to chat with session agent.")
-            while True:
-                user_input = input("You: ")
-                if user_input.lower() in ["exit", "quit"]:
-                    print("Exiting the chat.")
-                    break
-                response = openai_client.responses.create(
-                    model=model,
-                    input=user_input,
-                    tools=[{"type": "file_search", "vector_store_ids": [session_vector_store.id]}],
-                )
-                print(f"Session agent: {response.output_text}")
+                    print("Ready to chat with session agent.")
+                    conversation = openai_client.conversations.create()
+                    print(f"Created conversation (id: {conversation.id})")
+                    while True:
+                        user_input = input("You: ")
+                        if user_input.lower() in ["exit", "quit"]:
+                            print("Exiting the chat.")
+                            break
+                        response = openai_client.responses.create(
+                            conversation=conversation.id,
+                            extra_body={"agent": {"name": "session-agent", "type": "agent_reference"}},
+                            input=user_input
+                        )
+                        print(f"Session agent: {response.output_text}")
         
         elif agent_choice == "faq":
-            print("Ready to chat with FAQ agent.")
-            while True:
-                user_input = input("You: ")
-                if user_input.lower() in ["exit", "quit"]:
-                    print("Exiting the chat.")
-                    break
-                response = openai_client.responses.create(
-                    model=model,
-                    input=user_input,
-                    tools=[{"type": "file_search", "vector_store_ids": [faq_vector_store.id]}],
-                )
-                print(f"FAQ agent: {response.output_text}")
+                print("Ready to chat with FAQ agent (Azure knowledge base).")
+                conversation = openai_client.conversations.create()
+                print(f"Created conversation (id: {conversation.id})")
+                while True:
+                    user_input = input("You: ")
+                    if user_input.lower() in ["exit", "quit"]:
+                        print("Exiting the chat.")
+                        break
+                    response = openai_client.responses.create(
+                        conversation=conversation.id,
+                        extra_body={"agent": {"name": "faq-agent", "type": "agent_reference"}},
+                        input=user_input
+                    )
+                    print(f"FAQ agent: {response.output_text}")
 
 if __name__ == "__main__":
     chat_with_agent()

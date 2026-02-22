@@ -1,6 +1,6 @@
 # AI Tour Concierge
 
-This project is a static, React-based AI Tour Concierge chat interface for Microsoft AI Tour events. It helps attendees with session information, FAQs, and more. (Work in progress)
+This project is a static, React-based AI Tour Concierge chat interface for Microsoft AI Tour events. It helps attendees with session information, FAQs, and more. (Working in progress)
 
 ## Folder Structure
 
