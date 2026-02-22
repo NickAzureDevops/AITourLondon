@@ -600,6 +600,16 @@
           "location": "ワークショップルーム1",
           "topics": ["github", "copilot", "ai-toolkit", "workshop"]
         }
+        {
+          "id": "tok-003",
+          "time": "10:00pm",
+          "title": "AI Tour Tokyo Welcome",
+          "description": "Azure AIとMicrosoft Fabricを組み合わせたデータドリブンなAIソリューションの構築方法。",
+          "track": "Technical",
+          "speaker": "Microsoft Japan",
+          "location": "テクニカルルーム1",
+          "topics": ["azure-ai", "fabric", "data"]
+        }
       ]
     }
   }
