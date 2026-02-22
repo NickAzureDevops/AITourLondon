@@ -1,0 +1,48 @@
+{
+  "london": {
+    "name": "Microsoft AI Tour London",
+    "date": "February 24, 2026",
+    "venue": "ExCeL London",
+    "address": "Royal Victoria Dock, 1 Western Gateway, London E16 1XL, UK",
+    "doors_open": "7:30 AM GMT",
+    "keynote_start": "12:15 PM GMT",
+    "event_ends": "5:00 PM GMT",
+    "registration_url": "https://aitour.microsoft.com/flow/microsoft/london262",
+    "wifi": "Free WiFi available - Network: AI Tour Guest",
+    "food": "Complimentary lunch and refreshments provided",
+    "hashtag": "#MSAITour"
+  },
+  "paris": {
+    "name": "Microsoft AI Tour Paris",
+    "date": "March 11, 2026",
+    "venue": "Palais des Congrès",
+    "address": "2 Place de la Porte Maillot, 75017 Paris, France",
+    "doors_open": "8:00 AM CET",
+    "keynote_start": "9:30 AM CET",
+    "event_ends": "5:00 PM CET",
+    "registration_url": "https://aitour.microsoft.com/flow/microsoft/paris26",
+    "hashtag": "#MSAITour"
+  },
+  "munich": {
+    "name": "Microsoft AI Tour Munich",
+    "date": "February 25, 2026",
+    "venue": "ICM - Internationales Congress Center München",
+    "address": "Am Messesee 6, 81829 München, Germany",
+    "doors_open": "8:00 AM CET",
+    "keynote_start": "9:30 AM CET",
+    "event_ends": "5:00 PM CET",
+    "registration_url": "https://aitour.microsoft.com/flow/microsoft/munich26",
+    "hashtag": "#MSAITour"
+  },
+  "tokyo": {
+    "name": "Microsoft AI Tour Tokyo",
+    "date": "March 24, 2026",
+    "venue": "Tokyo Big Sight",
+    "address": "3-11-1 Ariake, Koto-ku, Tokyo 135-0063, Japan",
+    "doors_open": "9:00 AM JST",
+    "keynote_start": "10:00 AM JST",
+    "event_ends": "5:00 PM JST",
+    "registration_url": "https://aitour.microsoft.com/flow/microsoft/tokyo26",
+    "hashtag": "#MSAITour"
+  }
+}

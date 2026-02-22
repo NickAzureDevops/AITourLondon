@@ -1,0 +1,41 @@
+{
+  "ai-agents": [
+    {"title": "Build AI agents with Azure OpenAI Assistants", "url": "https://learn.microsoft.com/training/modules/build-ai-agents-azure-openai-assistants/", "duration": "45 min"},
+    {"title": "Introduction to Copilot Studio", "url": "https://learn.microsoft.com/training/modules/introduction-building-copilots-copilot-studio/", "duration": "30 min"}
+  ],
+  "foundry": [
+    {"title": "Get started with Azure AI Foundry", "url": "https://learn.microsoft.com/azure/ai-studio/", "duration": "1 hr"}
+  ],
+  "azure-openai": [
+    {"title": "Introduction to Azure OpenAI", "url": "https://learn.microsoft.com/training/modules/explore-azure-openai/", "duration": "30 min"},
+    {"title": "Develop GenAI solutions", "url": "https://learn.microsoft.com/training/paths/develop-ai-solutions-azure-openai/", "duration": "5 hrs"}
+  ],
+  "mcp": [
+    {"title": "MCP Specification", "url": "https://github.com/modelcontextprotocol/specification", "duration": "N/A"},
+    {"title": "MCP for Beginners", "url": "https://github.com/microsoft/mcp-for-beginners", "duration": "N/A"}
+  ],
+  "copilot": [
+    {"title": "Extend Microsoft 365 Copilot", "url": "https://learn.microsoft.com/training/paths/extend-microsoft-365-copilot/", "duration": "4 hrs"}
+  ]
+  {
+  "ai-agents": [
+    {"name": "azure-ai-agent-service-enterprise-demo", "description": "Enterprise demo for Azure AI Agent Service", "url": "https://github.com/Azure-Samples/azure-ai-agent-service-enterprise-demo"},
+    {"name": "semantic-kernel", "description": "Integrate LLM into your apps", "url": "https://github.com/microsoft/semantic-kernel"}
+  ],
+  "azure-openai": [
+    {"name": "azure-openai-samples", "description": "Azure OpenAI Service samples", "url": "https://github.com/Azure-Samples/azure-openai-samples"}
+  ],
+  "mcp": [
+    {"name": "modelcontextprotocol-servers", "description": "Reference MCP server implementations", "url": "https://github.com/modelcontextprotocol/servers"},
+    {"name": "python-mcp-demos", "description": "Python MCP demos with Azure deployment", "url": "https://github.com/Azure-Samples/python-mcp-demos"},
+    {"name": "mcp-for-beginners", "description": "MCP tutorial curriculum", "url": "https://github.com/microsoft/mcp-for-beginners"}
+  ],
+  "foundry": [
+    {"name": "azure-ai-foundry-samples", "description": "Azure AI Foundry samples", "url": "https://github.com/Azure-Samples/azure-ai-foundry-samples"}
+  ],
+  "copilot": [
+    {"name": "copilot-extensions-samples", "description": "Sample Copilot extensions", "url": "https://github.com/github/copilot-extensions-samples"}
+  ]
+}
+}
+

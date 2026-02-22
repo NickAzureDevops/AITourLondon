@@ -1,0 +1,606 @@
+{
+  "countries": {
+    "london": {
+      "name": "London, UK",
+      "timezone": "GMT",
+      "date": "2026-02-24",
+      "venue": "ExCeL London",
+      "events": [
+        {
+          "id": "ltg197-uk",
+          "time": "8:20am",
+          "title": "Building for Everyone: How Accessibility is Shaping the Future of AI",
+          "description": "For 30+ years, Microsoft and the disability community have driven accessible tech. Many everyday innovations began as disability solutions. Now AI opens new possibilities—from Seeing AI to inclusive dev tools—if we build it right.",
+          "track": "Lightning Talk",
+          "speaker": "Simi Bajaj, Cloud Solution Architect UK MW, Microsoft",
+          "location": "Lightning Talks 1 | Connection Hub | Level 0",
+          "topics": ["accessibility", "responsible-ai"]
+        },
+        {
+          "id": "ltg123-uk",
+          "time": "8:20am",
+          "title": "Windows – The secure AI platform for work",
+          "description": "Explore how Windows powers secure, AI-driven productivity—from Copilot+ PCs to Windows 365 for agents—built for scalable, resilient, and intelligent work.",
+          "track": "Lightning Talk",
+          "speaker": "Aleksandar Bozadzhiev, Senior Product Manager, Microsoft",
+          "location": "Lightning Talks 2 | Connection Hub | Level 0",
+          "topics": ["windows", "copilot", "security"]
+        },
+        {
+          "id": "ltg188-uk",
+          "time": "8:40am",
+          "title": "Building Your AI Tour Concierge Agent: From London to the World",
+          "description": "In this session, we will build a Global AI Tour Concierge Agent that helps attendees explore sessions across multiple AI Tour cities, starting in London. By using Microsoft Foundry, MCP, GitHub CLI, and Microsoft Learn, we will create an agent that answers questions and recommends learning resources.",
+          "track": "Lightning Talk",
+          "speaker": "Nicholas Chang, Senior Platform Engineer, Kainos",
+          "location": "Lightning Talks 1 | Connection Hub | Level 0",
+          "topics": ["ai-agents", "foundry", "mcp", "github"]
+        },
+        {
+          "id": "ltg120-uk",
+          "time": "8:40am",
+          "title": "Turning AI Potential into High-Impact AI Business Cases and ROI",
+          "description": "Discover Microsoft's high-impact AI Value Framework to build outcome-driven business cases. Drive ROI via time savings, error reduction, throughput, revenue growth, and cost avoidance.",
+          "track": "Lightning Talk",
+          "speaker": "Jon Champman, Solution Engineering Director, Microsoft",
+          "location": "Lightning Talks 2 | Connection Hub | Level 0",
+          "topics": ["business", "strategy", "ai-transformation"]
+        },
+        {
+          "id": "wrk542-uk",
+          "time": "8:45am",
+          "title": "Prototype agents with the AI toolkit and Model Context Protocol",
+          "description": "Learn how to build a conversational AI agent in VS Code using the AI toolkit, Microsoft Foundry and the Model Context Protocol (MCP). You'll explore and compare models to find the best fit for your agent, configure its instructions and enable sales analysis and product inventory management.",
+          "track": "Workshop",
+          "speaker": "Korey Stegared-Pace, Senior Cloud Advocate, Microsoft",
+          "location": "Workshop 2 | Level 3 | London Excel",
+          "topics": ["ai-agents", "mcp", "foundry", "ai-toolkit", "workshop"]
+        },
+        {
+          "id": "ltg121-uk",
+          "time": "9:00am",
+          "title": "Scaling AI with Purpose: A Human-Centered Approach",
+          "description": "Learn how frontier firms can adopt AI with purpose and empathy. This session introduces tools and frameworks to identify user scenarios, validate solutions, embed feedback, align leadership, and drive change through a human-centered lens.",
+          "track": "Lightning Talk",
+          "speaker": "Jo Johnstone, Copilot - Cloud Solution Architect, Microsoft",
+          "location": "Lightning Talks 2 | Connection Hub | Level 0",
+          "topics": ["responsible-ai", "strategy"]
+        },
+        {
+          "id": "ltg143-uk",
+          "time": "9:00am",
+          "title": "Unify and activate your data for AI innovation",
+          "description": "Learn how Microsoft helps businesses modernize data for AI. Discover key challenges to AI readiness and how to unify, transform, and govern data for smarter insights.",
+          "track": "Lightning Talk",
+          "speaker": "Ayeshna Jacob, UK&I Data & Analytics GTM Lead, Microsoft",
+          "location": "Lightning Talks 1 | Connection Hub | Level 0",
+          "topics": ["data", "azure-ai", "fabric"]
+        },
+        {
+          "id": "brk210-uk",
+          "time": "9:15am",
+          "title": "AI, agents and skilling for nonprofit acceleration",
+          "description": "Explore how AI, agents, and automation are empowering and future-proofing nonprofit teams worldwide. Through real-world examples, case studies, and agent-building demos.",
+          "track": "Breakout",
+          "speaker": "Dan I'Anson, Head of Digital, Data and Technology, Scope; Clint Conlin, Microsoft Elevate; Charles Eales, Microsoft",
+          "location": "Workshop 3 | Level 3 | London Excel",
+          "topics": ["ai-agents", "nonprofit", "industry"]
+        },
+        {
+          "id": "brk204-uk",
+          "time": "9:15am",
+          "title": "AI for Impact: Transforming Health, Education, and Public Services",
+          "description": "AI is accelerating life-saving breakthroughs, transforming healthcare experiences, and enabling governments and educators to deliver more secure, personalized, and equitable services.",
+          "track": "Breakout",
+          "speaker": "Kees Hertogh, VP Marketing Public Sector & Healthcare, Microsoft; Cormac Breen, Guy's and St Thomas' NHS; Sarah Mackenzie, St. Piran's School; Pete Lloyd, Lancashire County Council",
+          "location": "Breakout 4 | Level 3 | London Excel",
+          "topics": ["healthcare", "education", "public-sector", "industry"]
+        },
+        {
+          "id": "brk200-uk",
+          "time": "9:15am",
+          "title": "AI-ready for defense and intelligence missions",
+          "description": "Explore how AI is transforming human-machine collaboration in defense. This session highlights real-world applications—from autonomous systems to mission planning.",
+          "track": "Breakout",
+          "speaker": "Gus Macgregor-Millar, General Manager Defense & Intelligence, Microsoft",
+          "location": "Workshop 4 | Level 3 | London Excel",
+          "topics": ["defense", "industry", "ai-transformation"]
+        },
+        {
+          "id": "brk202-uk",
+          "time": "9:15am",
+          "title": "Pioneering the future of financial services with AI",
+          "description": "Explore how financial institutions are transforming with AI—from boosting productivity with Copilot and agents, to accelerating innovation through Azure AI.",
+          "track": "Breakout",
+          "speaker": "Simon Bullers, CTO Bank of England; Dave Collier, Microsoft UK Financial Services; Bill Borden, Corp VP Microsoft; Emily Prince, LSEG; Will Hyams, Howden Group",
+          "location": "Breakout 3 | Level 3 | London Excel",
+          "topics": ["financial-services", "copilot", "industry"]
+        },
+        {
+          "id": "brk207-uk",
+          "time": "9:15am",
+          "title": "Unleash creativity with AI",
+          "description": "Discover how media leaders are using agentic AI to empower creators, streamline workflows, and unlock monetization—and why today's AI decisions will shape tomorrow's competitive edge.",
+          "track": "Breakout",
+          "speaker": "TBA",
+          "location": "Workshop 1 | Level 3 | London Excel",
+          "topics": ["media", "creative", "ai-agents", "industry"]
+        },
+        {
+          "id": "brk208-uk",
+          "time": "9:15am",
+          "title": "Unlock AI innovation and agility in Retail and Consumer Goods",
+          "description": "Learn how Microsoft generative and agentic AI solutions are helping retailers and consumer goods companies grow revenue, reimagine shopper engagement, and build agile supply chains.",
+          "track": "Breakout",
+          "speaker": "Mike Grogan, General Manager Retail, Consumer Goods, Media & Telco, Microsoft",
+          "location": "Breakout 2 | Level 3 | London Excel",
+          "topics": ["retail", "industry", "ai-agents"]
+        },
+        {
+          "id": "ltg155-uk",
+          "time": "9:20am",
+          "title": "Fast data transformation in Fabric with OneLake and the Data Wrangler",
+          "description": "See how multi-cloud OneLake shortcuts connect to data sources without duplication, run shortcut file transforms and AI transforms like summarisation and PII detection.",
+          "track": "Lightning Talk",
+          "speaker": "Josh Ndemenge, Cloud Advocate, Microsoft",
+          "location": "Lightning Talks 1 | Connection Hub | Level 0",
+          "topics": ["fabric", "data", "onelake"]
+        },
+        {
+          "id": "ltg198-uk",
+          "time": "9:20am",
+          "title": "From Silos to Speed: How GitHub and AI Agents are Evolving DevOps Playbook",
+          "description": "DevOps isn't starting over. It's leveling up on platforms like GitHub, where AI and automation redefine how teams build software.",
+          "track": "Lightning Talk",
+          "speaker": "Miro Masat, Strategic Solutions Engineer, GitHub",
+          "location": "Lightning Talks 2 | Connection Hub | Level 0",
+          "topics": ["github", "devops", "ai-agents"]
+        },
+        {
+          "id": "ltg147-uk",
+          "time": "9:40am",
+          "title": "Upgrade, containerize, and deploy your apps with GitHub Copilot",
+          "description": "See how GitHub Copilot streamlines app modernization for .NET and Java—using AI to assist upgrades, then containerize and deploy to AKS Automatic with ease.",
+          "track": "Lightning Talk",
+          "speaker": "Patrick Vuong, Sr. Technical Product Marketing Manager, Microsoft",
+          "location": "Lightning Talks 1 | Connection Hub | Level 0",
+          "topics": ["github", "copilot", "containers", "aks"]
+        },
+        {
+          "id": "techbrk442-uk",
+          "time": "11:45am",
+          "title": "TECH CHECK | GitHub Copilot as an AI agent in the developer workflow",
+          "description": "See how GitHub Copilot exhibits agent-like behavior in real dev workflows, planning, executing multi-step tasks, and integrating deeply into engineering processes.",
+          "track": "Tech Check",
+          "speaker": "Christoffer Noring, Senior Advocate, Microsoft",
+          "location": "Breakout 1 | Level 3 | London Excel",
+          "topics": ["github", "copilot", "ai-agents", "development"]
+        },
+        {
+          "id": "ltg158-uk",
+          "time": "12:00pm",
+          "title": "Level up as a data expert with AI-ready databases and tools",
+          "description": "Learn how AI is transforming Azure Database for PostgreSQL with vector support, indexes, and Visual Studio tools.",
+          "track": "Lightning Talk",
+          "speaker": "Jasmine Greenaway, Senior Cloud Advocate, Microsoft",
+          "location": "Lightning Talks 2 | Connection Hub | Level 0",
+          "topics": ["databases", "postgresql", "azure-ai"]
+        },
+        {
+          "id": "brk320-uk",
+          "time": "12:15pm",
+          "title": "Becoming a Frontier Firm with Copilot + Agents",
+          "description": "Frontier Firms aren't just adopting AI, they're reimagining work around it. Discover what's new and how Copilot and agents are empowering people, teams and business processes in the era of AI.",
+          "track": "Keynote",
+          "speaker": "Nicole Herskowitz, Corporate Vice President Microsoft 365 & Copilot; Paulo de Sa, Managing Director Barclays; Zoe Hawtof, Microsoft",
+          "location": "Mainstage | Level 0 | London Excel",
+          "topics": ["copilot", "ai-agents", "keynote", "ai-transformation"]
+        },
+        {
+          "id": "wrk523-uk",
+          "time": "12:15pm",
+          "title": "Copilot Ready: Strategy, Data, and Security",
+          "description": "Unlock Copilot's full potential by preparing your org with data readiness, tenant hygiene, and agent security. Learn to secure environments, reduce data sprawl, and prevent Shadow AI leaks.",
+          "track": "Workshop",
+          "speaker": "Josh Leporati, Principal Customer Experience PM, Microsoft",
+          "location": "Workshop 1 | Level 3 | London Excel",
+          "topics": ["copilot", "security", "data", "workshop"]
+        },
+        {
+          "id": "brk340-uk",
+          "time": "12:15pm",
+          "title": "Driving business innovation with AI apps and agents",
+          "description": "Discover how AI apps and agents are redefining customer engagement, reshaping business processes, and helping businesses rapidly accelerate innovation.",
+          "track": "Breakout",
+          "speaker": "Tom Harmer, Cloud & AI Solutions Leader, Microsoft; Patrick Vuong, Microsoft; Lin Qiao, CEO Fireworks",
+          "location": "Breakout 2 | Level 3 | London Excel",
+          "topics": ["ai-agents", "azure-ai", "business"]
+        },
+        {
+          "id": "brk442-uk",
+          "time": "12:15pm",
+          "title": "GitHub Copilot as an AI agent in the developer workflow",
+          "description": "See how GitHub Copilot exhibits agent-like behavior in real dev workflows, planning, executing multi-step tasks, and integrating deeply into engineering processes.",
+          "track": "Breakout",
+          "speaker": "Christoffer Noring, Senior Advocate, Microsoft",
+          "location": "Breakout 1 | Level 3 | London Excel",
+          "topics": ["github", "copilot", "ai-agents", "development"]
+        },
+        {
+          "id": "wrk570-uk",
+          "time": "12:15pm",
+          "title": "Improving ops with Azure Copilot and GitHub Copilot",
+          "description": "Learn how Azure Copilot boosts app resilience by reviewing logs and streamlining ops. Get hands-on with real scenarios and see how GitHub Copilot can enhance your build and deployment workflows.",
+          "track": "Workshop",
+          "speaker": "Steven Murawski, Principal Cloud Advocate, Microsoft; Patrick Chanezon, VP Developer Relations, Microsoft",
+          "location": "Workshop 2 | Level 3 | London Excel",
+          "topics": ["azure", "copilot", "devops", "workshop"]
+        },
+        {
+          "id": "wrk542-uk-2",
+          "time": "12:15pm",
+          "title": "Prototype agents with the AI toolkit and Model Context Protocol",
+          "description": "Learn how to build a conversational AI agent in VS Code using the AI toolkit, Microsoft Foundry and the Model Context Protocol (MCP).",
+          "track": "Workshop",
+          "speaker": "Korey Stegared-Pace, Senior Cloud Advocate, Microsoft",
+          "location": "Workshop 3 | Level 3 | London Excel",
+          "topics": ["ai-agents", "mcp", "foundry", "ai-toolkit", "workshop"]
+        },
+        {
+          "id": "ltg156-uk",
+          "time": "12:20pm",
+          "title": "Safeguard agentic AI solutions with AI Red Teaming agent",
+          "description": "Enterprise-grade agentic AI solutions need to proactively assess risks and mitigate attacks. Learn how the AI Red Teaming agent in Microsoft Foundry helps you shift left to improve your security posture.",
+          "track": "Lightning Talk",
+          "speaker": "Amy Boyd, AI Advocacy Lead, Developer Relations, Microsoft",
+          "location": "Lightning Talks 1 | Connection Hub | Level 0",
+          "topics": ["security", "ai-agents", "foundry", "red-teaming"]
+        },
+        {
+          "id": "ltg153-uk",
+          "time": "12:40pm",
+          "title": "Automate model selection with Microsoft Foundry Model Router",
+          "description": "As 85% of enterprises adopt multi-model AI, developers face complexity in selecting, deploying, & managing the right models. Microsoft Foundry's model router automates model selection across performance, cost, and latency.",
+          "track": "Lightning Talk",
+          "speaker": "Lee Stott, Principal Cloud Advocate Manager, Microsoft",
+          "location": "Lightning Talks 2 | Connection Hub | Level 0",
+          "topics": ["foundry", "models", "azure-ai"]
+        },
+        {
+          "id": "ltg152-uk",
+          "time": "1:00pm",
+          "title": "From protocol to practice: build and use your first MCP server",
+          "description": "Discover how the Model Context Protocol (MCP) is transforming the way AI agents connect with tools, data and each other in a standardized way. Dive into building your own MCP server, connecting a client, and validating your setup using the official MCP Inspector.",
+          "track": "Lightning Talk",
+          "speaker": "Marlene Mhangami, Senior Developer Advocate, Microsoft",
+          "location": "Lightning Talks 1 | Connection Hub | Level 0",
+          "topics": ["mcp", "ai-agents", "development"]
+        },
+        {
+          "id": "ltg144-uk",
+          "time": "1:20pm",
+          "title": "Copilot in Fabric",
+          "description": "Discover AI in Fabric and how Copilot streamlines data tasks—from building pipelines to writing queries and reports. Explore chat-with-your-data experiences and Fabric data agents grounded in OneLake.",
+          "track": "Lightning Talk",
+          "speaker": "Denise Dourado, Microsoft",
+          "location": "Lightning Talks 2 | Connection Hub | Level 0",
+          "topics": ["fabric", "copilot", "data"]
+        },
+        {
+          "id": "brk462-uk",
+          "time": "1:30pm",
+          "title": "Enable agentic AI apps with a unified data estate in Microsoft Fabric",
+          "description": "Explore how organizations can enable agentic AI applications with Microsoft Fabric. Attendees will see practical demos covering transformation, governance, CI/CD for data products.",
+          "track": "Breakout",
+          "speaker": "Jasmine Greenaway, Senior Cloud Advocate, Microsoft",
+          "location": "Breakout 4 | Level 3 | London Excel",
+          "topics": ["fabric", "ai-agents", "data"]
+        },
+        {
+          "id": "brk380-uk",
+          "time": "1:30pm",
+          "title": "End-to-end security in the age of agentic AI",
+          "description": "Discover why security should be your top priority in your AI transformation. Learn how a modernized SOC can streamline your defenses and how agentic AI helps proactively defend against threats.",
+          "track": "Keynote",
+          "speaker": "Alym Rayani, Vice President Microsoft Security, Microsoft",
+          "location": "Mainstage | Level 0 | London Excel",
+          "topics": ["security", "ai-agents", "keynote"]
+        },
+        {
+          "id": "ltg146-uk",
+          "time": "1:40pm",
+          "title": "Modernize faster and securely for AI, with AI",
+          "description": "Discover how agentic AI is transforming the way organizations migrate and modernize—making cloud adoption faster, more cost-efficient, and more secure.",
+          "track": "Lightning Talk",
+          "speaker": "Michael Nelson, Cloud & AI GTM Director, Microsoft",
+          "location": "Lightning Talks 1 | Connection Hub | Level 0",
+          "topics": ["modernization", "azure", "ai-agents"]
+        },
+        {
+          "id": "ltg192-uk",
+          "time": "2:00pm",
+          "title": "Becoming Frontier: Empowering AI adoption through skills development",
+          "description": "Explore how Frontier Firms are unlocking business value from AI by integrating ongoing skill development into their organizational culture.",
+          "track": "Lightning Talk",
+          "speaker": "Steph Neale, Chief Learning Officer, Microsoft",
+          "location": "Lightning Talks 2 | Connection Hub | Level 0",
+          "topics": ["skilling", "ai-transformation", "business"]
+        },
+        {
+          "id": "wrk532-uk",
+          "time": "2:00pm",
+          "title": "Building agentic solutions with Copilot Studio",
+          "description": "Dive into Copilot Studio and build a full agent from the ground up. In this hands-on session, you'll design, automate, and deploy using tools like Agent Flows and MCP.",
+          "track": "Workshop",
+          "speaker": "Daniel Laskewitz, Principal Cloud Advocate, Microsoft",
+          "location": "Workshop 2 | Level 3 | London Excel",
+          "topics": ["copilot-studio", "ai-agents", "mcp", "workshop"]
+        },
+        {
+          "id": "wrk523-uk-2",
+          "time": "2:00pm",
+          "title": "Copilot Ready: Strategy, Data, and Security",
+          "description": "Unlock Copilot's full potential by preparing your org with data readiness, tenant hygiene, and agent security.",
+          "track": "Workshop",
+          "speaker": "Josh Leporati, Principal Customer Experience PM, Microsoft",
+          "location": "Workshop 1 | Level 3 | London Excel",
+          "topics": ["copilot", "security", "data", "workshop"]
+        },
+        {
+          "id": "wrk560-uk",
+          "time": "2:00pm",
+          "title": "Modernize your data estate with Fabric, Databricks, and Microsoft Foundry",
+          "description": "Learn how to create AI-driven experiences that feel agentic using Microsoft Fabric and Azure Databricks. This hands-on lab covers real-time data ingestion, transformation, and serving models.",
+          "track": "Workshop",
+          "speaker": "Josh Ndemenge, Cloud Advocate, Microsoft",
+          "location": "Workshop 4 | Level 3 | London Excel",
+          "topics": ["fabric", "databricks", "foundry", "workshop"]
+        },
+        {
+          "id": "wrk541-uk",
+          "time": "2:00pm",
+          "title": "Real-world code migration with GitHub Copilot Agent Mode",
+          "description": "Learn how GitHub Copilot Agent Mode can speed up the migration of a Python HTTP API to .NET. From syntax conversion to endpoint testing.",
+          "track": "Workshop",
+          "speaker": "Liam Hampton, Senior Cloud Advocate, Microsoft",
+          "location": "Workshop 3 | Level 3 | London Excel",
+          "topics": ["github", "copilot", "migration", "workshop"]
+        },
+        {
+          "id": "ltg180-uk",
+          "time": "2:20pm",
+          "title": "Security Copilot: Your GenAI-powered path to better security",
+          "description": "Learn how Security Copilot is transforming security and IT by automating tasks, surfacing insights, and empowering teams to respond faster and smarter.",
+          "track": "Lightning Talk",
+          "speaker": "Gemma Allen, Security Solution Engineer, Microsoft",
+          "location": "Lightning Talks 1 | Connection Hub | Level 0",
+          "topics": ["security", "copilot", "ai-agents"]
+        },
+        {
+          "id": "brk330-uk",
+          "time": "2:35pm",
+          "title": "Boost impact with AI apps and agents",
+          "description": "Discover how Microsoft Power Platform and Copilot Studio deliver secure, AI-powered automation to help teams move faster, prioritize tasks, and make confident decisions.",
+          "track": "Keynote",
+          "speaker": "Ryan Cunningham, Corporate Vice President Power Platform, Microsoft",
+          "location": "Mainstage | Level 0 | London Excel",
+          "topics": ["power-platform", "copilot-studio", "ai-agents", "keynote"]
+        },
+        {
+          "id": "brk441-uk",
+          "time": "2:35pm",
+          "title": "Build and launch AI agents fast with Microsoft Foundry and the AI Toolkit",
+          "description": "Build & ship AI agents fast with Microsoft Foundry Models and Azure. Prototype with open models, scale with Foundry models, & streamline workflows with AI Toolkit in VS Code.",
+          "track": "Breakout",
+          "speaker": "Amy Boyd, AI Advocacy Lead, Developer Relations, Microsoft",
+          "location": "Breakout 4 | Level 3 | London Excel",
+          "topics": ["ai-agents", "foundry", "ai-toolkit", "development"]
+        },
+        {
+          "id": "brk360-uk",
+          "time": "2:35pm",
+          "title": "Unify and activate your data for AI innovation",
+          "description": "Modernize your data and analytics estate for the era of AI. Learn how to unify, transform, and govern your data to unlock AI-driven insights.",
+          "track": "Breakout",
+          "speaker": "Henrique Moniz de Aragao, Head of Cloud & AI UK Ent Comm, Microsoft",
+          "location": "Breakout 1 | Level 3 | London Excel",
+          "topics": ["data", "azure-ai", "fabric"]
+        },
+        {
+          "id": "ltg124-uk",
+          "time": "2:40pm",
+          "title": "Accelerate your AI transformation with Surface Copilot+ PCs",
+          "description": "Make your AI strategy real with Surface Copilot+ PCs. Explore on-device AI, hybrid inferencing, and security that drive efficiency, innovation, and measurable business impact.",
+          "track": "Lightning Talk",
+          "speaker": "Raj Shee, Surface AI Copilot+PC Strategy UK Lead, Microsoft",
+          "location": "Lightning Talks 2 | Connection Hub | Level 0",
+          "topics": ["surface", "copilot", "hardware"]
+        },
+        {
+          "id": "ltg193-uk",
+          "time": "3:00pm",
+          "title": "AI Skills Navigator: Transforming skilling with AI-powered learning",
+          "description": "Experience the future of workforce development with AI Skills Navigator—our agentic learning space, bringing together AI-powered skilling experiences and credentials.",
+          "track": "Lightning Talk",
+          "speaker": "Tara Kelly, Director Customer Experience Program Manager, Microsoft",
+          "location": "Lightning Talks 1 | Connection Hub | Level 0",
+          "topics": ["skilling", "learning", "ai-agents"]
+        },
+        {
+          "id": "ltg142-uk",
+          "time": "3:20pm",
+          "title": "Driving reliability at scale with Azure SRE Agent",
+          "description": "Discover how Azure's SRE Agent transforms reliability into revenue. In this fast-paced demo, we'll show how teams can reduce downtime, accelerate root cause analysis, and unlock tangible savings.",
+          "track": "Lightning Talk",
+          "speaker": "Patrick Vuong, Sr. Technical Product Marketing Manager, Microsoft",
+          "location": "Lightning Talks 2 | Connection Hub | Level 0",
+          "topics": ["azure", "sre", "ai-agents", "reliability"]
+        },
+        {
+          "id": "brk431-uk",
+          "time": "3:40pm",
+          "title": "Advanced agent development with Copilot Studio",
+          "description": "Autonomous agents are transforming work. With Copilot Studio, teams can build decision-making agents using low-code tools, triggers, and orchestration—plus new features like agent flows and multi-agent coordination.",
+          "track": "Breakout",
+          "speaker": "April Dunnam, Cloud Advocate, Microsoft",
+          "location": "Breakout 1 | Level 3 | London Excel",
+          "topics": ["copilot-studio", "ai-agents", "low-code"]
+        },
+        {
+          "id": "brk471-uk",
+          "time": "3:40pm",
+          "title": "AI Tools for infrastructure management",
+          "description": "Explore how to use Azure Copilot and agentic AI to manage cloud infrastructure. We'll break down its architecture, orchestration logic, VS Code integration, and how it uses LLMs to detect issues.",
+          "track": "Breakout",
+          "speaker": "Rick Claus, Principal Cloud Advocate (Team Lead), Microsoft",
+          "location": "Breakout 4 | Level 3 | London Excel",
+          "topics": ["azure", "infrastructure", "ai-agents", "devops"]
+        },
+        {
+          "id": "ltg209-uk",
+          "time": "3:40pm",
+          "title": "Connect the future with AI",
+          "description": "Telecoms are leading the charge to transform with AI. Discover how telecoms are adopting Copilot and Agentic AI to personalize service, automate network and business operations.",
+          "track": "Lightning Talk",
+          "speaker": "Iain Thornhill, Snr Industry Director, Microsoft",
+          "location": "Lightning Talks 1 | Connection Hub | Level 0",
+          "topics": ["telecom", "industry", "ai-agents"]
+        },
+        {
+          "id": "brk481-uk",
+          "time": "3:40pm",
+          "title": "Microsoft Agent 365 Security & Governance Controls",
+          "description": "Confidently activate and secure your AI agent estate with Microsoft Agent 365 capabilities. These capabilities help your IT teams manage AI access and agent sprawl, prevent data oversharing.",
+          "track": "Breakout",
+          "speaker": "Chris Jeffrey, Sr Technical Specialist - Security for AI Global Blackbelt, Microsoft",
+          "location": "Breakout 2 | Level 3 | London Excel",
+          "topics": ["security", "governance", "ai-agents"]
+        },
+        {
+          "id": "ltg181-uk",
+          "time": "3:40pm",
+          "title": "Securing your data in the era of AI with Microsoft Purview",
+          "description": "Be ready to safeguard your sensitive data in the era of AI! Discover how Microsoft Purview helps you balance innovation with data security.",
+          "track": "Lightning Talk",
+          "speaker": "Athena Bitros, Data Security Solution Engineer, Microsoft",
+          "location": "Lightning Talks 2 | Connection Hub | Level 0",
+          "topics": ["security", "purview", "data"]
+        },
+        {
+          "id": "brk321-uk",
+          "time": "3:40pm",
+          "title": "Transforming Sales & Service with Agentic Customer Experience",
+          "description": "Explore how Microsoft 365 Copilot and Dynamics 365 deliver agentic customer experience (CX), helping organizations drive higher revenue and CSAT.",
+          "track": "Keynote",
+          "speaker": "Jason Gregory, Director of Product Marketing, Microsoft; Manika Nigam, Senior Director CX Product Marketing, Microsoft",
+          "location": "Mainstage | Level 0 | London Excel",
+          "topics": ["dynamics-365", "copilot", "customer-experience", "keynote"]
+        },
+        {
+          "id": "brk461-uk",
+          "time": "3:40pm",
+          "title": "What's new in Microsoft databases: empowering AI-driven app dev",
+          "description": "Learn how to support AI agents with secure, scalable, and resilient data backends. See how Azure Database for PostgreSQL, Cosmos DB, SQL Server and Azure SQL enable smart scaling.",
+          "track": "Breakout",
+          "speaker": "Jasmine Greenaway, Senior Cloud Advocate, Microsoft",
+          "location": "Breakout 3 | Level 3 | London Excel",
+          "topics": ["databases", "azure-sql", "cosmos-db", "ai-agents"]
+        }
+      ]
+    },
+    "paris": {
+      "name": "Paris, France",
+      "timezone": "CET",
+      "date": "2026-03-11",
+      "venue": "Palais des Congrès",
+      "events": [
+        {
+          "id": "par-001",
+          "time": "9:00am",
+          "title": "L'IA Générative pour les Développeurs",
+          "description": "Découvrez comment créer des applications intelligentes avec Azure AI et Microsoft Foundry.",
+          "track": "Keynote",
+          "speaker": "Microsoft France",
+          "location": "Salle Principale",
+          "topics": ["azure-ai", "generative-ai", "foundry"]
+        },
+        {
+          "id": "par-002",
+          "time": "11:00am",
+          "title": "Agents IA avec Azure OpenAI et MCP",
+          "description": "Construisez des agents conversationnels intelligents avec Azure OpenAI et le Model Context Protocol.",
+          "track": "Technical",
+          "speaker": "Microsoft France",
+          "location": "Salle Technique 1",
+          "topics": ["azure-openai", "ai-agents", "mcp"]
+        },
+        {
+          "id": "par-003",
+          "time": "2:00pm",
+          "title": "Prototype d'agents avec AI Toolkit",
+          "description": "Apprenez à prototyper des agents IA dans VS Code avec AI Toolkit et Microsoft Foundry.",
+          "track": "Workshop",
+          "speaker": "Microsoft France",
+          "location": "Atelier 1",
+          "topics": ["ai-toolkit", "foundry", "ai-agents", "workshop"]
+        }
+      ]
+    },
+    "munich": {
+      "name": "Munich, Germany",
+      "timezone": "CET",
+      "date": "2026-02-25",
+      "venue": "ICM - Internationales Congress Center München",
+      "events": [
+        {
+          "id": "mun-001",
+          "time": "9:00am",
+          "title": "KI-Agenten mit Microsoft Foundry",
+          "description": "Erfahren Sie, wie Sie KI-Agenten mit Microsoft Foundry und dem AI Toolkit erstellen.",
+          "track": "Keynote",
+          "speaker": "Microsoft Germany",
+          "location": "Hauptsaal",
+          "topics": ["ai-agents", "foundry", "ai-toolkit"]
+        },
+        {
+          "id": "mun-002",
+          "time": "11:00am",
+          "title": "GitHub Copilot für Enterprise-Entwicklung",
+          "description": "Entdecken Sie, wie GitHub Copilot Agent Mode die Entwicklung in Unternehmen transformiert.",
+          "track": "Technical",
+          "speaker": "Microsoft Germany",
+          "location": "Konferenzraum 1",
+          "topics": ["github", "copilot", "enterprise"]
+        }
+      ]
+    },
+    "tokyo": {
+      "name": "Tokyo, Japan",
+      "timezone": "JST",
+      "date": "2026-03-24",
+      "venue": "Tokyo Big Sight",
+      "events": [
+        {
+          "id": "tok-001",
+          "time": "10:00am",
+          "title": "AIエージェントの構築",
+          "description": "Microsoft FoundryとMCPを使用してAIエージェントを構築する方法を学びます。",
+          "track": "Keynote",
+          "speaker": "Microsoft Japan",
+          "location": "メインホール",
+          "topics": ["ai-agents", "foundry", "mcp"]
+        },
+        {
+          "id": "tok-002",
+          "time": "1:00pm",
+          "title": "GitHub CopilotとAIツールキット",
+          "description": "VS CodeでAIツールキットとGitHub Copilotを使用した開発手法。",
+          "track": "Workshop",
+          "speaker": "Microsoft Japan",
+          "location": "ワークショップルーム1",
+          "topics": ["github", "copilot", "ai-toolkit", "workshop"]
+        }
+      ]
+    }
+  }
+}

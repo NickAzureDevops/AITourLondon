@@ -1,0 +1,16 @@
+name: ai-tour-concierge
+metadata:
+  template: ai-tour-concierge@0.0.1-beta
+
+infra:
+  provider: bicep
+  path: infra
+
+services:
+  frontend:
+    project: ./frontend
+    host: containerapp
+    docker:
+      path: Dockerfile
+      context: ./frontend
+    image: ai-tour-frontend:latest   # <-- Add this line
