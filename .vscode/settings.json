@@ -1,4 +1,5 @@
 {
     "chat.mcp.autostart": "never",
-    "demoTime.defaultFileType": "yaml"
+    "demoTime.defaultFileType": "yaml",
+    "workbench.colorTheme": "Default Light+"
 }

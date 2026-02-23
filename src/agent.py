@@ -8,13 +8,12 @@ from azure.ai.projects.models import FileSearchTool, Tool, PromptAgentDefinition
 import uuid
 from azure.ai.projects.models import MCPTool
 import glob
-
 load_dotenv()
 
 # Load environment variables with correct names
 search_service_endpoint = os.environ.get("search_service_endpoint")
 knowledge_base_name = os.environ.get("KNOWLEDGE_BASE_NAME")
-mcp_endpoint = f"{search_service_endpoint}/knowledgebases/{knowledge_base_name}/mcp?api-version=2025-11-01-preview"
+mcp_endpoint = f"{search_service_endpoint}/knowledgebases/{knowledge_base_name}/mcp?api-version=2023-11-01"
 PROJECT_ENDPOINT = os.environ.get("FOUNDRY_PROJECT_ENDPOINT")
 agent_model = os.environ.get("FOUNDRY_MODEL")
 EMBEDDING_MODEL = os.environ.get("FOUNDRY_EMBEDDING_MODEL")
@@ -69,6 +68,7 @@ mcp_kb_tool = MCPTool(
     server_url = mcp_endpoint,
     require_approval = "never",
     allowed_tools = ["knowledge_base_retrieve"],
+    project_connection_id = project_connection_name
 )
 
 # Create agent with MCP tool
@@ -134,7 +134,7 @@ def chat_with_agent():
                 user_profile_details="Avoid irrelevant or sensitive data, such as age, financials, precise location, and credentials"
             )
             definition = MemoryStoreDefaultDefinition(
-                chat_model=CHAT_MODEL,
+                chat_model=agent_model,
                 embedding_model=EMBEDDING_MODEL,
                 options=options
             )
@@ -149,10 +149,13 @@ def chat_with_agent():
             print(f"Ready to store and retrieve user preferences in unified memory store: {all_memory_store_name}")
 
             while True:
-                user_input = input("You: ")
+                user_input = input("You: ").strip()
                 if user_input.lower() in ["exit", "quit"]:
                     print("Exiting the chat.")
                     break
+                if not user_input:
+                    print("Please enter a message.")
+                    continue
 
                 user_message = ResponsesUserMessageItemParam(
                     content=user_input
@@ -188,10 +191,13 @@ def chat_with_agent():
                     conversation = openai_client.conversations.create()
                     print(f"Created conversation (id: {conversation.id})")
                     while True:
-                        user_input = input("You: ")
+                        user_input = input("You: ").strip()
                         if user_input.lower() in ["exit", "quit"]:
                             print("Exiting the chat.")
                             break
+                        if not user_input:
+                            print("Please enter a message.")
+                            continue
                         response = openai_client.responses.create(
                             conversation=conversation.id,
                             extra_body={"agent": {"name": "session-agent", "type": "agent_reference"}},
@@ -204,10 +210,13 @@ def chat_with_agent():
                 conversation = openai_client.conversations.create()
                 print(f"Created conversation (id: {conversation.id})")
                 while True:
-                    user_input = input("You: ")
+                    user_input = input("You: ").strip()
                     if user_input.lower() in ["exit", "quit"]:
                         print("Exiting the chat.")
                         break
+                    if not user_input:
+                        print("Please enter a message.")
+                        continue
                     response = openai_client.responses.create(
                         conversation=conversation.id,
                         extra_body={"agent": {"name": "faq-agent", "type": "agent_reference"}},

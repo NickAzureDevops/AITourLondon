@@ -2,9 +2,7 @@ import json
 import re
 from pathlib import Path
 from mcp.server.fastmcp import FastMCP
-
 BASE_DIR = Path(__file__).parent.parent
-
 mcp = FastMCP("ai-tour-concierge")
 
 def _load_schedule() -> str:
@@ -14,13 +12,34 @@ def _load_faq() -> str:
     return (BASE_DIR / "data/faq.md").read_text()
 
 @mcp.tool()
-def get_schedule(query: str = "") -> str:
-    """Search the AI Tour London session schedule. Pass a time (e.g. '2pm'), topic, speaker, or session title."""
-    content = _load_schedule()
-    if not query:
+def get_schedule(query: str = "", city: str = None) -> str:
+    """Search the AI Tour session schedule"""
+    supported_cities = ["london", "tokyo", "são paulo"]
+    city_final = city
+
+    if not city_final and query:
+        ql = query.lower().replace("sao paulo", "são paulo")
+        for c in supported_cities:
+            if c in ql:
+                city_final = c
+                break
+
+    if not city_final:
+        return "Which city? London, Tokyo, or São Paulo?"
+
+    if city_final == "london":
+        content = _load_schedule()
+    else:
+        return f"Sorry, schedule for {city_final.title()} is not available in this demo."
+
+    query_lower = query.lower() if query else ""
+    show_all_phrases = ["all sessions", "everything", "full schedule"]
+    if (
+        not query
+        or any(phrase in query_lower for phrase in show_all_phrases)
+    ):
         return content
 
-    query_lower = query.lower()
     sections = re.split(r"(?=###)", content)
 
     if "first session" in query_lower:

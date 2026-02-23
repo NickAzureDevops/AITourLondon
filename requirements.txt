@@ -2,3 +2,4 @@ fastapi
 uvicorn
 agent-framework
 mcp
+requests
