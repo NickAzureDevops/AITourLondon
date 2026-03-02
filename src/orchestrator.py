@@ -1,4 +1,4 @@
-from .agent import PROJECT_ENDPOINT, session_agent, faq_agent, personalised_agent, openai_client
+from .agent import session_agent, faq_agent, personalised_agent, openai_client
 import os
 from azure.ai.projects import AIProjectClient
 from azure.identity import DefaultAzureCredential

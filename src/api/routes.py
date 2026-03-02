@@ -1,9 +1,18 @@
+from fastapi import APIRouter
+from pydantic import BaseModel
 from ..orchestrator import route
 import traceback
 
-def chat(agent, message):
+router = APIRouter()
+
+class ChatRequest(BaseModel):
+    agent: str
+    message: str
+
+@router.post("/chat")
+def chat(request: ChatRequest):
     try:
-        result = route(agent, message)
+        result = route(request.agent, request.message)
         return {"response": result}
     except Exception as e:
         print("/chat endpoint error:", e)
